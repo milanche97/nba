@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PlayersController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TeamsController;
@@ -27,3 +28,7 @@ Route::get('/players/{id}', [PlayersController::class, 'show'])->name('single-pl
 
 Route::get('/register', [RegisterController::class, 'create']);
 Route::post('/register', [RegisterController::class, 'store']);
+
+
+Route::get('/login', [LoginController::class, 'create']);
+Route::post('/login', [LoginController::class, 'store']);

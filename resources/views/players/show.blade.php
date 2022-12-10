@@ -1,21 +1,3 @@
-{{--
-@section('title')
-{{ $player->first_name }} {{ $player->last_name }}
-@endsection
-
-@section('header-title')
-{{ $player->first_name }} {{ $player->last_name }}
-@endsection
-
-@section('header-desc')
-Page for {{ $player->first_name }} {{ $player->last_name }}
-@endsection
-
-@section('content')
-
-
-
-@endsection --}}
 <h1>Player:</h1>
 <div class="blog-post">
   <h2 class="blog-post-title">{{ $player->first_name }} {{ $player->last_name }}</h2>
