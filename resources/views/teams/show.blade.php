@@ -17,10 +17,15 @@
         <strong> <a href="{{ route('single-player', ['id' => $player->id]) }}">{{ $player->first_name }} {{ $player->last_name }}</a></strong>
     </li>
 @endforeach
-
-@foreach ($team->comments as $comment)
-    <li>
-        <strong>{{$comment->content}}>{{ $comment->user_id }} </strong>
-    </li>
-@endforeach
+<hr>
+    <ul class="unstyled">
+        @foreach ($team->comments as $comment)
+            <li>
+                <p>
+                    {{ $comment->content }} by {{ $comment->user->name }}
+                </p>
+            </li>
+        @endforeach
+    </ul>
+    <hr>
 

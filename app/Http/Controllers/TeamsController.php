@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Team;
 use Illuminate\Http\Request;
+use App\Models\Team;
+
 
 class TeamsController extends Controller
 {
@@ -21,6 +22,15 @@ class TeamsController extends Controller
         $team = Team::find($id);
         return view('teams.show', compact('team'));
     }
+
+    // public function show($id) {
+
+    //     $team = Team::with('players', 'comments.user')->find($id);
+
+    //     return view('teams.show', compact('team'));
+
+    // }
+
 }
 
 

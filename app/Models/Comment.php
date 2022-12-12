@@ -1,7 +1,8 @@
 <?php
-namespace App;
+namespace App\Models;
+
 use Illuminate\Database\Eloquent\Model;
-class Comments extends Model
+class Comment extends Model
 {
     protected $fillable = [
         'content', 'team_id', 'user_id'
