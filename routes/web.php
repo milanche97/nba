@@ -31,3 +31,9 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/login', [LoginController::class, 'create'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
+
+// Route::post('/teams/{team_id}/comments', ['as' => 'team-comments', 'uses' => 'CommentsController@store']);
+
+// Route::get('/logout', ['as' => 'logout', 'uses' => 'LoginController@destroy']);
+// Route::get('/verification/{id}', ['as' => 'verification', 'uses' => 'LoginController@verification']);
+
