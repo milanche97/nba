@@ -1,4 +1,3 @@
-
 <h2>Team:</h2>
 <div class="blog-post">
     <h2 class="blog-post-title">{{ $team->name }}</h2>
@@ -18,3 +17,10 @@
         <strong> <a href="{{ route('single-player', ['id' => $player->id]) }}">{{ $player->first_name }} {{ $player->last_name }}</a></strong>
     </li>
 @endforeach
+
+@foreach ($team->comments as $comment)
+    <li>
+        <strong>{{$comment->content}}>{{ $comment->user_id }} </strong>
+    </li>
+@endforeach
+
