@@ -2,12 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use Illuminate\Http\Request;
 use App\Models\Team;
-
+use Illuminate\Support\Facades\Auth;
 
 class CommentsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('forbidden-comment')->only('store');
+    }
+
 
     public function store(Request $request, $team_id)
     {
@@ -19,6 +25,15 @@ class CommentsController extends Controller
         );
 
         $team = Team::find($team_id);
+
+        Comment::create([
+            'content' => $request->get('content'),
+            'team_id' => $team->id,
+            'user_id' => Auth::user()->id,
+        ]);
+
+        return redirect()->route('single-team', ['id' => $team_id]);
+
 
     }
 }

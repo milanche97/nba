@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PlayersController;
 use App\Http\Controllers\RegisterController;
@@ -32,7 +33,7 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/login', [LoginController::class, 'create'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
 
-// Route::post('/teams/{team_id}/comments', ['as' => 'team-comments', 'uses' => 'CommentsController@store']);
+Route::post('/teams/{team_id}/comments', [CommentsController::class, 'store'])->name('team-comments');
 
 // Route::get('/logout', ['as' => 'logout', 'uses' => 'LoginController@destroy']);
 // Route::get('/verification/{id}', ['as' => 'verification', 'uses' => 'LoginController@verification']);

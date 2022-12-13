@@ -33,7 +33,7 @@ public function store()
             'password' => bcrypt(request('password'))
         ]);
 
-        // auth()->login($user);
+        auth()->login($user);
 
         return redirect('/login');
     }
