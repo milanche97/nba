@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Comment;
+use App\Models\News;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -19,6 +20,13 @@ class Team extends Model
         return $this->hasMany(Comment::class);
 
     }
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+    public function news() {
+        return $this->belongsToMany(News::class);
+    }
 }
+
 
 

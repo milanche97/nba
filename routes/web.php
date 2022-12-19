@@ -35,6 +35,4 @@ Route::post('/login', [LoginController::class, 'store']);
 
 Route::post('/teams/{team_id}/comments', [CommentsController::class, 'store'])->name('team-comments');
 
-// Route::get('/logout', ['as' => 'logout', 'uses' => 'LoginController@destroy']);
-// Route::get('/verification/{id}', ['as' => 'verification', 'uses' => 'LoginController@verification']);
-
+Route::get('/news/{new}/teams', [NewsController::class, 'show'])->name('posts-by-tag');

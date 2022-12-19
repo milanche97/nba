@@ -27,13 +27,17 @@ class CommentsController extends Controller
         );
 
         $team = Team::find($team_id);
-        Mail::to($team->user)->send(new CommentReceived($team));
-        
+
+        // dd($team->user);
+        Mail::to($team)->send(new CommentReceived($team));
+
         Comment::create([
             'content' => $request->get('content'),
             'team_id' => $team->id,
             'user_id' => Auth::user()->id,
         ]);
+
+
 
 
         return redirect()->route('single-team', ['id' => $team_id]);

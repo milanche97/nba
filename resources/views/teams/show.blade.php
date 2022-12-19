@@ -1,3 +1,4 @@
+@extends('layouts.master')
 <h2>Team:</h2>
 <div class="blog-post">
     <h2 class="blog-post-title">{{ $team->name }}</h2>
@@ -18,6 +19,18 @@
     </li>
 @endforeach
 <hr>
+<br>
+@if(count($team->news))
+<ul>
+    @foreach($team->news as $new)
+        <li>
+       <strong>{{ $new->title }}</strong>
+     <br>  {{ $new->content }} 
+        </li>
+    @endforeach
+</ul>
+<br>
+@endif
     <ul class="unstyled">
         @foreach ($team->comments as $comment)
             <li>

@@ -1,4 +1,4 @@
-
+@extends('layouts.master')
 <h1>All teams:</h1>
 <ul>
 @foreach ($teams as $team)

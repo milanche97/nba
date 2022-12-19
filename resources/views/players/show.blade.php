@@ -1,3 +1,4 @@
+@extends('layouts.master')
 <h1>Player:</h1>
 <div class="blog-post">
   <h2 class="blog-post-title">{{ $player->first_name }} {{ $player->last_name }}</h2>
