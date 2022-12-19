@@ -22,8 +22,8 @@ class NewsSeeder extends Seeder
     {
         User::all()->each(
             function (User $user) {
-                $posts = News::factory(5)->create(['user_id' => $user->id]);
-                $user->posts()->saveMany($posts);
+                $news = News::factory(5)->create(['user_id' => $user->id]);
+                $user->posts()->saveMany($news);
             }
         );
     }
